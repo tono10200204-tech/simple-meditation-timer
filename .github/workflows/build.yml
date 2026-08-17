@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # The instrumented test is not here: it needs a running device, and
+      # booting an emulator per push costs more than it would catch. It runs
+      # locally with `./gradlew connectedDebugAndroidTest`.
+      - name: Build and test
+        working-directory: android
+        run: ./gradlew assembleDebug testDebugUnitTest
+
+      - name: Keep the test report when something fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: android/app/build/reports/tests/

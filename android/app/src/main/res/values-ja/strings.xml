@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start_meditation">瞑想を始める</string>
+    <string name="pause_meditation">一時停止</string>
+    <string name="resume_meditation">再開</string>
+
+    <string name="record">記録</string>
+    <string name="discard">中止</string>
+    <string name="done">終了</string>
+
+    <string name="hours_only">%d時間</string>
+
+    <string name="edit_total_title">累計瞑想時間</string>
+    <string name="edit_total_hint">時間</string>
+    <string name="save">保存</string>
+    <string name="cancel">キャンセル</string>
+
+</resources>

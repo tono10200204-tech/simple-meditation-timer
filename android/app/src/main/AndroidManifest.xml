@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The phone is face down with the screen off during a sit, and Android
+         would otherwise suspend the process before the bell is due. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Auto Backup would copy the database to Google Drive, which is a cloud
+         this app claims not to have. Losing the data is recoverable by retyping
+         the total, which is the deal the README makes. -->
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SimpleMeditationTimer">
+
+        <!-- The figure and the controls below it need more height than a phone
+             has in landscape, where Record and Discard end up off screen and a
+             paused session cannot be finished. A timer you put face down has no
+             use for landscape, so it does not get one. Android 16 ignores this
+             on displays 600dp and wider, which have the height to spare. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SimpleMeditationTimer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
