@@ -2,6 +2,8 @@
 
 A bell marks the start and the end of a sit, and the timer keeps counting if you stay seated past it.
 
+**Looking for beta testers.** Google Play requires a closed test before this can go public. Opting in takes one click — no install required. [Sign up here](https://forms.gle/s8oMioufnPuHA9Sk8) with the Google account email you'd like added.
+
 <p>
   <img src="docs/images/home.png" width="190" alt="Home screen: the figure in a ring, the Pali phrase, duration presets, and the lifetime total">
   <img src="docs/images/paused.png" width="190" alt="Paused: the figure dimmed, with Record and Discard">
